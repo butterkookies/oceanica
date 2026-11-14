@@ -1,0 +1,3287 @@
+{
+  "version": 1,
+  "artStyle": "Studio Ghibli Cel-Gouache (Sunlit Conservatory)",
+  "cellSize": {
+    "width": 256,
+    "height": 176
+  },
+  "canonicalDirection": "left (-X)",
+  "species": {
+    "koi_kohaku": {
+      "sheet": "sheets/koi_kohaku_spritesheet.png",
+      "sheetSize": {
+        "width": 1536,
+        "height": 1232
+      },
+      "growthPhases": {
+        "fry": {
+          "minGrowth": 0.0,
+          "maxGrowth": 0.35,
+          "scaleMultiplier": 0.48
+        },
+        "juvenile": {
+          "minGrowth": 0.35,
+          "maxGrowth": 0.75,
+          "scaleMultiplier": 0.74
+        },
+        "adult": {
+          "minGrowth": 0.75,
+          "maxGrowth": 1.0,
+          "scaleMultiplier": 1.0
+        }
+      },
+      "angles": [
+        "side",
+        "top"
+      ],
+      "animations": {
+        "fry_side_swim": {
+          "frames": [
+            "fry_side_swim_0",
+            "fry_side_swim_1",
+            "fry_side_swim_2",
+            "fry_side_swim_3",
+            "fry_side_swim_4",
+            "fry_side_swim_5"
+          ],
+          "fps": 10,
+          "loop": true
+        },
+        "fry_top_swim": {
+          "frames": [
+            "fry_top_swim_0",
+            "fry_top_swim_1",
+            "fry_top_swim_2",
+            "fry_top_swim_3",
+            "fry_top_swim_4",
+            "fry_top_swim_5"
+          ],
+          "fps": 10,
+          "loop": true
+        },
+        "juvenile_side_swim": {
+          "frames": [
+            "juvenile_side_swim_0",
+            "juvenile_side_swim_1",
+            "juvenile_side_swim_2",
+            "juvenile_side_swim_3",
+            "juvenile_side_swim_4",
+            "juvenile_side_swim_5"
+          ],
+          "fps": 10,
+          "loop": true
+        },
+        "juvenile_top_swim": {
+          "frames": [
+            "juvenile_top_swim_0",
+            "juvenile_top_swim_1",
+            "juvenile_top_swim_2",
+            "juvenile_top_swim_3",
+            "juvenile_top_swim_4",
+            "juvenile_top_swim_5"
+          ],
+          "fps": 10,
+          "loop": true
+        },
+        "adult_side_swim": {
+          "frames": [
+            "adult_side_swim_0",
+            "adult_side_swim_1",
+            "adult_side_swim_2",
+            "adult_side_swim_3",
+            "adult_side_swim_4",
+            "adult_side_swim_5"
+          ],
+          "fps": 10,
+          "loop": true
+        },
+        "adult_top_swim": {
+          "frames": [
+            "adult_top_swim_0",
+            "adult_top_swim_1",
+            "adult_top_swim_2",
+            "adult_top_swim_3",
+            "adult_top_swim_4",
+            "adult_top_swim_5"
+          ],
+          "fps": 10,
+          "loop": true
+        },
+        "behaviors_0": {
+          "frames": [
+            "eat_side",
+            "scavenge_side",
+            "turn_left_top",
+            "turn_right_top"
+          ],
+          "fps": 10,
+          "loop": false
+        }
+      },
+      "frames": {
+        "fry_side_swim_0": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 0
+        },
+        "fry_side_swim_1": {
+          "x": 256,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 1
+        },
+        "fry_side_swim_2": {
+          "x": 512,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 2
+        },
+        "fry_side_swim_3": {
+          "x": 768,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 3
+        },
+        "fry_side_swim_4": {
+          "x": 1024,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 4
+        },
+        "fry_side_swim_5": {
+          "x": 1280,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 5
+        },
+        "fry_top_swim_0": {
+          "x": 0,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 0
+        },
+        "fry_top_swim_1": {
+          "x": 256,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 1
+        },
+        "fry_top_swim_2": {
+          "x": 512,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 2
+        },
+        "fry_top_swim_3": {
+          "x": 768,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 3
+        },
+        "fry_top_swim_4": {
+          "x": 1024,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 4
+        },
+        "fry_top_swim_5": {
+          "x": 1280,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 5
+        },
+        "juvenile_side_swim_0": {
+          "x": 0,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 0
+        },
+        "juvenile_side_swim_1": {
+          "x": 256,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 1
+        },
+        "juvenile_side_swim_2": {
+          "x": 512,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 2
+        },
+        "juvenile_side_swim_3": {
+          "x": 768,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 3
+        },
+        "juvenile_side_swim_4": {
+          "x": 1024,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 4
+        },
+        "juvenile_side_swim_5": {
+          "x": 1280,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 5
+        },
+        "juvenile_top_swim_0": {
+          "x": 0,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 0
+        },
+        "juvenile_top_swim_1": {
+          "x": 256,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 1
+        },
+        "juvenile_top_swim_2": {
+          "x": 512,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 2
+        },
+        "juvenile_top_swim_3": {
+          "x": 768,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 3
+        },
+        "juvenile_top_swim_4": {
+          "x": 1024,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 4
+        },
+        "juvenile_top_swim_5": {
+          "x": 1280,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 5
+        },
+        "adult_side_swim_0": {
+          "x": 0,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 0
+        },
+        "adult_side_swim_1": {
+          "x": 256,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 1
+        },
+        "adult_side_swim_2": {
+          "x": 512,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 2
+        },
+        "adult_side_swim_3": {
+          "x": 768,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 3
+        },
+        "adult_side_swim_4": {
+          "x": 1024,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 4
+        },
+        "adult_side_swim_5": {
+          "x": 1280,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 5
+        },
+        "adult_top_swim_0": {
+          "x": 0,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 0
+        },
+        "adult_top_swim_1": {
+          "x": 256,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 1
+        },
+        "adult_top_swim_2": {
+          "x": 512,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 2
+        },
+        "adult_top_swim_3": {
+          "x": 768,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 3
+        },
+        "adult_top_swim_4": {
+          "x": 1024,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 4
+        },
+        "adult_top_swim_5": {
+          "x": 1280,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 5
+        },
+        "eat_side": {
+          "x": 0,
+          "y": 1056,
+          "w": 256,
+          "h": 176,
+          "row": 6,
+          "col": 0
+        },
+        "scavenge_side": {
+          "x": 256,
+          "y": 1056,
+          "w": 256,
+          "h": 176,
+          "row": 6,
+          "col": 1
+        },
+        "turn_left_top": {
+          "x": 512,
+          "y": 1056,
+          "w": 256,
+          "h": 176,
+          "row": 6,
+          "col": 2
+        },
+        "turn_right_top": {
+          "x": 768,
+          "y": 1056,
+          "w": 256,
+          "h": 176,
+          "row": 6,
+          "col": 3
+        }
+      }
+    },
+    "koi_sanke": {
+      "sheet": "sheets/koi_sanke_spritesheet.png",
+      "sheetSize": {
+        "width": 1536,
+        "height": 1056
+      },
+      "growthPhases": {
+        "fry": {
+          "minGrowth": 0.0,
+          "maxGrowth": 0.35,
+          "scaleMultiplier": 0.48
+        },
+        "juvenile": {
+          "minGrowth": 0.35,
+          "maxGrowth": 0.75,
+          "scaleMultiplier": 0.74
+        },
+        "adult": {
+          "minGrowth": 0.75,
+          "maxGrowth": 1.0,
+          "scaleMultiplier": 1.0
+        }
+      },
+      "angles": [
+        "side",
+        "top"
+      ],
+      "animations": {
+        "fry_side_swim": {
+          "frames": [
+            "fry_side_swim_0",
+            "fry_side_swim_1",
+            "fry_side_swim_2",
+            "fry_side_swim_3",
+            "fry_side_swim_4",
+            "fry_side_swim_5"
+          ],
+          "fps": 10,
+          "loop": true
+        },
+        "fry_top_swim": {
+          "frames": [
+            "fry_top_swim_0",
+            "fry_top_swim_1",
+            "fry_top_swim_2",
+            "fry_top_swim_3",
+            "fry_top_swim_4",
+            "fry_top_swim_5"
+          ],
+          "fps": 10,
+          "loop": true
+        },
+        "juvenile_side_swim": {
+          "frames": [
+            "juvenile_side_swim_0",
+            "juvenile_side_swim_1",
+            "juvenile_side_swim_2",
+            "juvenile_side_swim_3",
+            "juvenile_side_swim_4",
+            "juvenile_side_swim_5"
+          ],
+          "fps": 10,
+          "loop": true
+        },
+        "juvenile_top_swim": {
+          "frames": [
+            "juvenile_top_swim_0",
+            "juvenile_top_swim_1",
+            "juvenile_top_swim_2",
+            "juvenile_top_swim_3",
+            "juvenile_top_swim_4",
+            "juvenile_top_swim_5"
+          ],
+          "fps": 10,
+          "loop": true
+        },
+        "adult_side_swim": {
+          "frames": [
+            "adult_side_swim_0",
+            "adult_side_swim_1",
+            "adult_side_swim_2",
+            "adult_side_swim_3",
+            "adult_side_swim_4",
+            "adult_side_swim_5"
+          ],
+          "fps": 10,
+          "loop": true
+        },
+        "adult_top_swim": {
+          "frames": [
+            "adult_top_swim_0",
+            "adult_top_swim_1",
+            "adult_top_swim_2",
+            "adult_top_swim_3",
+            "adult_top_swim_4",
+            "adult_top_swim_5"
+          ],
+          "fps": 10,
+          "loop": true
+        }
+      },
+      "frames": {
+        "fry_side_swim_0": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 0
+        },
+        "fry_side_swim_1": {
+          "x": 256,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 1
+        },
+        "fry_side_swim_2": {
+          "x": 512,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 2
+        },
+        "fry_side_swim_3": {
+          "x": 768,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 3
+        },
+        "fry_side_swim_4": {
+          "x": 1024,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 4
+        },
+        "fry_side_swim_5": {
+          "x": 1280,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 5
+        },
+        "fry_top_swim_0": {
+          "x": 0,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 0
+        },
+        "fry_top_swim_1": {
+          "x": 256,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 1
+        },
+        "fry_top_swim_2": {
+          "x": 512,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 2
+        },
+        "fry_top_swim_3": {
+          "x": 768,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 3
+        },
+        "fry_top_swim_4": {
+          "x": 1024,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 4
+        },
+        "fry_top_swim_5": {
+          "x": 1280,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 5
+        },
+        "juvenile_side_swim_0": {
+          "x": 0,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 0
+        },
+        "juvenile_side_swim_1": {
+          "x": 256,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 1
+        },
+        "juvenile_side_swim_2": {
+          "x": 512,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 2
+        },
+        "juvenile_side_swim_3": {
+          "x": 768,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 3
+        },
+        "juvenile_side_swim_4": {
+          "x": 1024,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 4
+        },
+        "juvenile_side_swim_5": {
+          "x": 1280,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 5
+        },
+        "juvenile_top_swim_0": {
+          "x": 0,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 0
+        },
+        "juvenile_top_swim_1": {
+          "x": 256,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 1
+        },
+        "juvenile_top_swim_2": {
+          "x": 512,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 2
+        },
+        "juvenile_top_swim_3": {
+          "x": 768,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 3
+        },
+        "juvenile_top_swim_4": {
+          "x": 1024,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 4
+        },
+        "juvenile_top_swim_5": {
+          "x": 1280,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 5
+        },
+        "adult_side_swim_0": {
+          "x": 0,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 0
+        },
+        "adult_side_swim_1": {
+          "x": 256,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 1
+        },
+        "adult_side_swim_2": {
+          "x": 512,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 2
+        },
+        "adult_side_swim_3": {
+          "x": 768,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 3
+        },
+        "adult_side_swim_4": {
+          "x": 1024,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 4
+        },
+        "adult_side_swim_5": {
+          "x": 1280,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 5
+        },
+        "adult_top_swim_0": {
+          "x": 0,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 0
+        },
+        "adult_top_swim_1": {
+          "x": 256,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 1
+        },
+        "adult_top_swim_2": {
+          "x": 512,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 2
+        },
+        "adult_top_swim_3": {
+          "x": 768,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 3
+        },
+        "adult_top_swim_4": {
+          "x": 1024,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 4
+        },
+        "adult_top_swim_5": {
+          "x": 1280,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 5
+        }
+      }
+    },
+    "betta_halfmoon": {
+      "sheet": "sheets/betta_halfmoon_spritesheet.png",
+      "sheetSize": {
+        "width": 1536,
+        "height": 1232
+      },
+      "growthPhases": {
+        "fry": {
+          "minGrowth": 0.0,
+          "maxGrowth": 0.35,
+          "scaleMultiplier": 0.48
+        },
+        "juvenile": {
+          "minGrowth": 0.35,
+          "maxGrowth": 0.75,
+          "scaleMultiplier": 0.74
+        },
+        "adult": {
+          "minGrowth": 0.75,
+          "maxGrowth": 1.0,
+          "scaleMultiplier": 1.0
+        }
+      },
+      "angles": [
+        "side",
+        "top"
+      ],
+      "animations": {
+        "fry_side_swim": {
+          "frames": [
+            "fry_side_swim_0",
+            "fry_side_swim_1",
+            "fry_side_swim_2",
+            "fry_side_swim_3",
+            "fry_side_swim_4",
+            "fry_side_swim_5"
+          ],
+          "fps": 10,
+          "loop": true
+        },
+        "fry_top_swim": {
+          "frames": [
+            "fry_top_swim_0",
+            "fry_top_swim_1",
+            "fry_top_swim_2",
+            "fry_top_swim_3",
+            "fry_top_swim_4",
+            "fry_top_swim_5"
+          ],
+          "fps": 10,
+          "loop": true
+        },
+        "juvenile_side_swim": {
+          "frames": [
+            "juvenile_side_swim_0",
+            "juvenile_side_swim_1",
+            "juvenile_side_swim_2",
+            "juvenile_side_swim_3",
+            "juvenile_side_swim_4",
+            "juvenile_side_swim_5"
+          ],
+          "fps": 10,
+          "loop": true
+        },
+        "juvenile_top_swim": {
+          "frames": [
+            "juvenile_top_swim_0",
+            "juvenile_top_swim_1",
+            "juvenile_top_swim_2",
+            "juvenile_top_swim_3",
+            "juvenile_top_swim_4",
+            "juvenile_top_swim_5"
+          ],
+          "fps": 10,
+          "loop": true
+        },
+        "adult_side_swim": {
+          "frames": [
+            "adult_side_swim_0",
+            "adult_side_swim_1",
+            "adult_side_swim_2",
+            "adult_side_swim_3",
+            "adult_side_swim_4",
+            "adult_side_swim_5"
+          ],
+          "fps": 10,
+          "loop": true
+        },
+        "adult_top_swim": {
+          "frames": [
+            "adult_top_swim_0",
+            "adult_top_swim_1",
+            "adult_top_swim_2",
+            "adult_top_swim_3",
+            "adult_top_swim_4",
+            "adult_top_swim_5"
+          ],
+          "fps": 10,
+          "loop": true
+        },
+        "behaviors_0": {
+          "frames": [
+            "flare_side",
+            "surface_gulp_side",
+            "rest_side",
+            "scurve_top",
+            "flare_top",
+            "glide_alt_top"
+          ],
+          "fps": 10,
+          "loop": false
+        }
+      },
+      "frames": {
+        "fry_side_swim_0": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 0
+        },
+        "fry_side_swim_1": {
+          "x": 256,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 1
+        },
+        "fry_side_swim_2": {
+          "x": 512,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 2
+        },
+        "fry_side_swim_3": {
+          "x": 768,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 3
+        },
+        "fry_side_swim_4": {
+          "x": 1024,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 4
+        },
+        "fry_side_swim_5": {
+          "x": 1280,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 5
+        },
+        "fry_top_swim_0": {
+          "x": 0,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 0
+        },
+        "fry_top_swim_1": {
+          "x": 256,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 1
+        },
+        "fry_top_swim_2": {
+          "x": 512,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 2
+        },
+        "fry_top_swim_3": {
+          "x": 768,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 3
+        },
+        "fry_top_swim_4": {
+          "x": 1024,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 4
+        },
+        "fry_top_swim_5": {
+          "x": 1280,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 5
+        },
+        "juvenile_side_swim_0": {
+          "x": 0,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 0
+        },
+        "juvenile_side_swim_1": {
+          "x": 256,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 1
+        },
+        "juvenile_side_swim_2": {
+          "x": 512,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 2
+        },
+        "juvenile_side_swim_3": {
+          "x": 768,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 3
+        },
+        "juvenile_side_swim_4": {
+          "x": 1024,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 4
+        },
+        "juvenile_side_swim_5": {
+          "x": 1280,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 5
+        },
+        "juvenile_top_swim_0": {
+          "x": 0,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 0
+        },
+        "juvenile_top_swim_1": {
+          "x": 256,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 1
+        },
+        "juvenile_top_swim_2": {
+          "x": 512,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 2
+        },
+        "juvenile_top_swim_3": {
+          "x": 768,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 3
+        },
+        "juvenile_top_swim_4": {
+          "x": 1024,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 4
+        },
+        "juvenile_top_swim_5": {
+          "x": 1280,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 5
+        },
+        "adult_side_swim_0": {
+          "x": 0,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 0
+        },
+        "adult_side_swim_1": {
+          "x": 256,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 1
+        },
+        "adult_side_swim_2": {
+          "x": 512,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 2
+        },
+        "adult_side_swim_3": {
+          "x": 768,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 3
+        },
+        "adult_side_swim_4": {
+          "x": 1024,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 4
+        },
+        "adult_side_swim_5": {
+          "x": 1280,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 5
+        },
+        "adult_top_swim_0": {
+          "x": 0,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 0
+        },
+        "adult_top_swim_1": {
+          "x": 256,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 1
+        },
+        "adult_top_swim_2": {
+          "x": 512,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 2
+        },
+        "adult_top_swim_3": {
+          "x": 768,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 3
+        },
+        "adult_top_swim_4": {
+          "x": 1024,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 4
+        },
+        "adult_top_swim_5": {
+          "x": 1280,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 5
+        },
+        "flare_side": {
+          "x": 0,
+          "y": 1056,
+          "w": 256,
+          "h": 176,
+          "row": 6,
+          "col": 0
+        },
+        "surface_gulp_side": {
+          "x": 256,
+          "y": 1056,
+          "w": 256,
+          "h": 176,
+          "row": 6,
+          "col": 1
+        },
+        "rest_side": {
+          "x": 512,
+          "y": 1056,
+          "w": 256,
+          "h": 176,
+          "row": 6,
+          "col": 2
+        },
+        "scurve_top": {
+          "x": 768,
+          "y": 1056,
+          "w": 256,
+          "h": 176,
+          "row": 6,
+          "col": 3
+        },
+        "flare_top": {
+          "x": 1024,
+          "y": 1056,
+          "w": 256,
+          "h": 176,
+          "row": 6,
+          "col": 4
+        },
+        "glide_alt_top": {
+          "x": 1280,
+          "y": 1056,
+          "w": 256,
+          "h": 176,
+          "row": 6,
+          "col": 5
+        }
+      }
+    },
+    "betta_plakat": {
+      "sheet": "sheets/betta_plakat_spritesheet.png",
+      "sheetSize": {
+        "width": 1536,
+        "height": 1232
+      },
+      "growthPhases": {
+        "fry": {
+          "minGrowth": 0.0,
+          "maxGrowth": 0.35,
+          "scaleMultiplier": 0.48
+        },
+        "juvenile": {
+          "minGrowth": 0.35,
+          "maxGrowth": 0.75,
+          "scaleMultiplier": 0.74
+        },
+        "adult": {
+          "minGrowth": 0.75,
+          "maxGrowth": 1.0,
+          "scaleMultiplier": 1.0
+        }
+      },
+      "angles": [
+        "side",
+        "top"
+      ],
+      "animations": {
+        "fry_side_swim": {
+          "frames": [
+            "fry_side_swim_0",
+            "fry_side_swim_1",
+            "fry_side_swim_2",
+            "fry_side_swim_3",
+            "fry_side_swim_4",
+            "fry_side_swim_5"
+          ],
+          "fps": 10,
+          "loop": true
+        },
+        "fry_top_swim": {
+          "frames": [
+            "fry_top_swim_0",
+            "fry_top_swim_1",
+            "fry_top_swim_2",
+            "fry_top_swim_3",
+            "fry_top_swim_4",
+            "fry_top_swim_5"
+          ],
+          "fps": 10,
+          "loop": true
+        },
+        "juvenile_side_swim": {
+          "frames": [
+            "juvenile_side_swim_0",
+            "juvenile_side_swim_1",
+            "juvenile_side_swim_2",
+            "juvenile_side_swim_3",
+            "juvenile_side_swim_4",
+            "juvenile_side_swim_5"
+          ],
+          "fps": 10,
+          "loop": true
+        },
+        "juvenile_top_swim": {
+          "frames": [
+            "juvenile_top_swim_0",
+            "juvenile_top_swim_1",
+            "juvenile_top_swim_2",
+            "juvenile_top_swim_3",
+            "juvenile_top_swim_4",
+            "juvenile_top_swim_5"
+          ],
+          "fps": 10,
+          "loop": true
+        },
+        "adult_side_swim": {
+          "frames": [
+            "adult_side_swim_0",
+            "adult_side_swim_1",
+            "adult_side_swim_2",
+            "adult_side_swim_3",
+            "adult_side_swim_4",
+            "adult_side_swim_5"
+          ],
+          "fps": 10,
+          "loop": true
+        },
+        "adult_top_swim": {
+          "frames": [
+            "adult_top_swim_0",
+            "adult_top_swim_1",
+            "adult_top_swim_2",
+            "adult_top_swim_3",
+            "adult_top_swim_4",
+            "adult_top_swim_5"
+          ],
+          "fps": 10,
+          "loop": true
+        },
+        "behaviors_0": {
+          "frames": [
+            "subadult_top",
+            "eat_side"
+          ],
+          "fps": 10,
+          "loop": false
+        }
+      },
+      "frames": {
+        "fry_side_swim_0": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 0
+        },
+        "fry_side_swim_1": {
+          "x": 256,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 1
+        },
+        "fry_side_swim_2": {
+          "x": 512,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 2
+        },
+        "fry_side_swim_3": {
+          "x": 768,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 3
+        },
+        "fry_side_swim_4": {
+          "x": 1024,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 4
+        },
+        "fry_side_swim_5": {
+          "x": 1280,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 5
+        },
+        "fry_top_swim_0": {
+          "x": 0,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 0
+        },
+        "fry_top_swim_1": {
+          "x": 256,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 1
+        },
+        "fry_top_swim_2": {
+          "x": 512,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 2
+        },
+        "fry_top_swim_3": {
+          "x": 768,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 3
+        },
+        "fry_top_swim_4": {
+          "x": 1024,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 4
+        },
+        "fry_top_swim_5": {
+          "x": 1280,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 5
+        },
+        "juvenile_side_swim_0": {
+          "x": 0,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 0
+        },
+        "juvenile_side_swim_1": {
+          "x": 256,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 1
+        },
+        "juvenile_side_swim_2": {
+          "x": 512,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 2
+        },
+        "juvenile_side_swim_3": {
+          "x": 768,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 3
+        },
+        "juvenile_side_swim_4": {
+          "x": 1024,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 4
+        },
+        "juvenile_side_swim_5": {
+          "x": 1280,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 5
+        },
+        "juvenile_top_swim_0": {
+          "x": 0,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 0
+        },
+        "juvenile_top_swim_1": {
+          "x": 256,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 1
+        },
+        "juvenile_top_swim_2": {
+          "x": 512,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 2
+        },
+        "juvenile_top_swim_3": {
+          "x": 768,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 3
+        },
+        "juvenile_top_swim_4": {
+          "x": 1024,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 4
+        },
+        "juvenile_top_swim_5": {
+          "x": 1280,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 5
+        },
+        "adult_side_swim_0": {
+          "x": 0,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 0
+        },
+        "adult_side_swim_1": {
+          "x": 256,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 1
+        },
+        "adult_side_swim_2": {
+          "x": 512,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 2
+        },
+        "adult_side_swim_3": {
+          "x": 768,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 3
+        },
+        "adult_side_swim_4": {
+          "x": 1024,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 4
+        },
+        "adult_side_swim_5": {
+          "x": 1280,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 5
+        },
+        "adult_top_swim_0": {
+          "x": 0,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 0
+        },
+        "adult_top_swim_1": {
+          "x": 256,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 1
+        },
+        "adult_top_swim_2": {
+          "x": 512,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 2
+        },
+        "adult_top_swim_3": {
+          "x": 768,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 3
+        },
+        "adult_top_swim_4": {
+          "x": 1024,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 4
+        },
+        "adult_top_swim_5": {
+          "x": 1280,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 5
+        },
+        "subadult_top": {
+          "x": 0,
+          "y": 1056,
+          "w": 256,
+          "h": 176,
+          "row": 6,
+          "col": 0
+        },
+        "eat_side": {
+          "x": 256,
+          "y": 1056,
+          "w": 256,
+          "h": 176,
+          "row": 6,
+          "col": 1
+        }
+      }
+    },
+    "goldfish_oranda": {
+      "sheet": "sheets/goldfish_oranda_spritesheet.png",
+      "sheetSize": {
+        "width": 1536,
+        "height": 1232
+      },
+      "growthPhases": {
+        "fry": {
+          "minGrowth": 0.0,
+          "maxGrowth": 0.35,
+          "scaleMultiplier": 0.48
+        },
+        "juvenile": {
+          "minGrowth": 0.35,
+          "maxGrowth": 0.75,
+          "scaleMultiplier": 0.74
+        },
+        "adult": {
+          "minGrowth": 0.75,
+          "maxGrowth": 1.0,
+          "scaleMultiplier": 1.0
+        }
+      },
+      "angles": [
+        "side",
+        "top"
+      ],
+      "animations": {
+        "fry_side_swim": {
+          "frames": [
+            "fry_side_swim_0",
+            "fry_side_swim_1",
+            "fry_side_swim_2",
+            "fry_side_swim_3",
+            "fry_side_swim_4",
+            "fry_side_swim_5"
+          ],
+          "fps": 10,
+          "loop": true
+        },
+        "fry_top_swim": {
+          "frames": [
+            "fry_top_swim_0",
+            "fry_top_swim_1",
+            "fry_top_swim_2",
+            "fry_top_swim_3",
+            "fry_top_swim_4",
+            "fry_top_swim_5"
+          ],
+          "fps": 10,
+          "loop": true
+        },
+        "juvenile_side_swim": {
+          "frames": [
+            "juvenile_side_swim_0",
+            "juvenile_side_swim_1",
+            "juvenile_side_swim_2",
+            "juvenile_side_swim_3",
+            "juvenile_side_swim_4",
+            "juvenile_side_swim_5"
+          ],
+          "fps": 10,
+          "loop": true
+        },
+        "juvenile_top_swim": {
+          "frames": [
+            "juvenile_top_swim_0",
+            "juvenile_top_swim_1",
+            "juvenile_top_swim_2",
+            "juvenile_top_swim_3",
+            "juvenile_top_swim_4",
+            "juvenile_top_swim_5"
+          ],
+          "fps": 10,
+          "loop": true
+        },
+        "adult_side_swim": {
+          "frames": [
+            "adult_side_swim_0",
+            "adult_side_swim_1",
+            "adult_side_swim_2",
+            "adult_side_swim_3",
+            "adult_side_swim_4",
+            "adult_side_swim_5"
+          ],
+          "fps": 10,
+          "loop": true
+        },
+        "adult_top_swim": {
+          "frames": [
+            "adult_top_swim_0",
+            "adult_top_swim_1",
+            "adult_top_swim_2",
+            "adult_top_swim_3",
+            "adult_top_swim_4",
+            "adult_top_swim_5"
+          ],
+          "fps": 10,
+          "loop": true
+        },
+        "behaviors_0": {
+          "frames": [
+            "juvenile_calico_side",
+            "subadult_smooth_top",
+            "eat_side",
+            "flex_side",
+            "waddle_top"
+          ],
+          "fps": 10,
+          "loop": false
+        }
+      },
+      "frames": {
+        "fry_side_swim_0": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 0
+        },
+        "fry_side_swim_1": {
+          "x": 256,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 1
+        },
+        "fry_side_swim_2": {
+          "x": 512,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 2
+        },
+        "fry_side_swim_3": {
+          "x": 768,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 3
+        },
+        "fry_side_swim_4": {
+          "x": 1024,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 4
+        },
+        "fry_side_swim_5": {
+          "x": 1280,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 5
+        },
+        "fry_top_swim_0": {
+          "x": 0,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 0
+        },
+        "fry_top_swim_1": {
+          "x": 256,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 1
+        },
+        "fry_top_swim_2": {
+          "x": 512,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 2
+        },
+        "fry_top_swim_3": {
+          "x": 768,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 3
+        },
+        "fry_top_swim_4": {
+          "x": 1024,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 4
+        },
+        "fry_top_swim_5": {
+          "x": 1280,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 5
+        },
+        "juvenile_side_swim_0": {
+          "x": 0,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 0
+        },
+        "juvenile_side_swim_1": {
+          "x": 256,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 1
+        },
+        "juvenile_side_swim_2": {
+          "x": 512,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 2
+        },
+        "juvenile_side_swim_3": {
+          "x": 768,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 3
+        },
+        "juvenile_side_swim_4": {
+          "x": 1024,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 4
+        },
+        "juvenile_side_swim_5": {
+          "x": 1280,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 5
+        },
+        "juvenile_top_swim_0": {
+          "x": 0,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 0
+        },
+        "juvenile_top_swim_1": {
+          "x": 256,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 1
+        },
+        "juvenile_top_swim_2": {
+          "x": 512,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 2
+        },
+        "juvenile_top_swim_3": {
+          "x": 768,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 3
+        },
+        "juvenile_top_swim_4": {
+          "x": 1024,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 4
+        },
+        "juvenile_top_swim_5": {
+          "x": 1280,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 5
+        },
+        "adult_side_swim_0": {
+          "x": 0,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 0
+        },
+        "adult_side_swim_1": {
+          "x": 256,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 1
+        },
+        "adult_side_swim_2": {
+          "x": 512,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 2
+        },
+        "adult_side_swim_3": {
+          "x": 768,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 3
+        },
+        "adult_side_swim_4": {
+          "x": 1024,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 4
+        },
+        "adult_side_swim_5": {
+          "x": 1280,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 5
+        },
+        "adult_top_swim_0": {
+          "x": 0,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 0
+        },
+        "adult_top_swim_1": {
+          "x": 256,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 1
+        },
+        "adult_top_swim_2": {
+          "x": 512,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 2
+        },
+        "adult_top_swim_3": {
+          "x": 768,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 3
+        },
+        "adult_top_swim_4": {
+          "x": 1024,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 4
+        },
+        "adult_top_swim_5": {
+          "x": 1280,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 5
+        },
+        "juvenile_calico_side": {
+          "x": 0,
+          "y": 1056,
+          "w": 256,
+          "h": 176,
+          "row": 6,
+          "col": 0
+        },
+        "subadult_smooth_top": {
+          "x": 256,
+          "y": 1056,
+          "w": 256,
+          "h": 176,
+          "row": 6,
+          "col": 1
+        },
+        "eat_side": {
+          "x": 512,
+          "y": 1056,
+          "w": 256,
+          "h": 176,
+          "row": 6,
+          "col": 2
+        },
+        "flex_side": {
+          "x": 768,
+          "y": 1056,
+          "w": 256,
+          "h": 176,
+          "row": 6,
+          "col": 3
+        },
+        "waddle_top": {
+          "x": 1024,
+          "y": 1056,
+          "w": 256,
+          "h": 176,
+          "row": 6,
+          "col": 4
+        }
+      }
+    },
+    "goldfish_comet": {
+      "sheet": "sheets/goldfish_comet_spritesheet.png",
+      "sheetSize": {
+        "width": 1536,
+        "height": 1232
+      },
+      "growthPhases": {
+        "fry": {
+          "minGrowth": 0.0,
+          "maxGrowth": 0.35,
+          "scaleMultiplier": 0.48
+        },
+        "juvenile": {
+          "minGrowth": 0.35,
+          "maxGrowth": 0.75,
+          "scaleMultiplier": 0.74
+        },
+        "adult": {
+          "minGrowth": 0.75,
+          "maxGrowth": 1.0,
+          "scaleMultiplier": 1.0
+        }
+      },
+      "angles": [
+        "side",
+        "top"
+      ],
+      "animations": {
+        "fry_side_swim": {
+          "frames": [
+            "fry_side_swim_0",
+            "fry_side_swim_1",
+            "fry_side_swim_2",
+            "fry_side_swim_3",
+            "fry_side_swim_4",
+            "fry_side_swim_5"
+          ],
+          "fps": 10,
+          "loop": true
+        },
+        "fry_top_swim": {
+          "frames": [
+            "fry_top_swim_0",
+            "fry_top_swim_1",
+            "fry_top_swim_2",
+            "fry_top_swim_3",
+            "fry_top_swim_4",
+            "fry_top_swim_5"
+          ],
+          "fps": 10,
+          "loop": true
+        },
+        "juvenile_side_swim": {
+          "frames": [
+            "juvenile_side_swim_0",
+            "juvenile_side_swim_1",
+            "juvenile_side_swim_2",
+            "juvenile_side_swim_3",
+            "juvenile_side_swim_4",
+            "juvenile_side_swim_5"
+          ],
+          "fps": 10,
+          "loop": true
+        },
+        "juvenile_top_swim": {
+          "frames": [
+            "juvenile_top_swim_0",
+            "juvenile_top_swim_1",
+            "juvenile_top_swim_2",
+            "juvenile_top_swim_3",
+            "juvenile_top_swim_4",
+            "juvenile_top_swim_5"
+          ],
+          "fps": 10,
+          "loop": true
+        },
+        "adult_side_swim": {
+          "frames": [
+            "adult_side_swim_0",
+            "adult_side_swim_1",
+            "adult_side_swim_2",
+            "adult_side_swim_3",
+            "adult_side_swim_4",
+            "adult_side_swim_5"
+          ],
+          "fps": 10,
+          "loop": true
+        },
+        "adult_top_swim": {
+          "frames": [
+            "adult_top_swim_0",
+            "adult_top_swim_1",
+            "adult_top_swim_2",
+            "adult_top_swim_3",
+            "adult_top_swim_4",
+            "adult_top_swim_5"
+          ],
+          "fps": 10,
+          "loop": true
+        },
+        "behaviors_0": {
+          "frames": [
+            "sprint_side"
+          ],
+          "fps": 10,
+          "loop": false
+        }
+      },
+      "frames": {
+        "fry_side_swim_0": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 0
+        },
+        "fry_side_swim_1": {
+          "x": 256,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 1
+        },
+        "fry_side_swim_2": {
+          "x": 512,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 2
+        },
+        "fry_side_swim_3": {
+          "x": 768,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 3
+        },
+        "fry_side_swim_4": {
+          "x": 1024,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 4
+        },
+        "fry_side_swim_5": {
+          "x": 1280,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 5
+        },
+        "fry_top_swim_0": {
+          "x": 0,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 0
+        },
+        "fry_top_swim_1": {
+          "x": 256,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 1
+        },
+        "fry_top_swim_2": {
+          "x": 512,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 2
+        },
+        "fry_top_swim_3": {
+          "x": 768,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 3
+        },
+        "fry_top_swim_4": {
+          "x": 1024,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 4
+        },
+        "fry_top_swim_5": {
+          "x": 1280,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 5
+        },
+        "juvenile_side_swim_0": {
+          "x": 0,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 0
+        },
+        "juvenile_side_swim_1": {
+          "x": 256,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 1
+        },
+        "juvenile_side_swim_2": {
+          "x": 512,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 2
+        },
+        "juvenile_side_swim_3": {
+          "x": 768,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 3
+        },
+        "juvenile_side_swim_4": {
+          "x": 1024,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 4
+        },
+        "juvenile_side_swim_5": {
+          "x": 1280,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 5
+        },
+        "juvenile_top_swim_0": {
+          "x": 0,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 0
+        },
+        "juvenile_top_swim_1": {
+          "x": 256,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 1
+        },
+        "juvenile_top_swim_2": {
+          "x": 512,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 2
+        },
+        "juvenile_top_swim_3": {
+          "x": 768,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 3
+        },
+        "juvenile_top_swim_4": {
+          "x": 1024,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 4
+        },
+        "juvenile_top_swim_5": {
+          "x": 1280,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 5
+        },
+        "adult_side_swim_0": {
+          "x": 0,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 0
+        },
+        "adult_side_swim_1": {
+          "x": 256,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 1
+        },
+        "adult_side_swim_2": {
+          "x": 512,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 2
+        },
+        "adult_side_swim_3": {
+          "x": 768,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 3
+        },
+        "adult_side_swim_4": {
+          "x": 1024,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 4
+        },
+        "adult_side_swim_5": {
+          "x": 1280,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 5
+        },
+        "adult_top_swim_0": {
+          "x": 0,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 0
+        },
+        "adult_top_swim_1": {
+          "x": 256,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 1
+        },
+        "adult_top_swim_2": {
+          "x": 512,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 2
+        },
+        "adult_top_swim_3": {
+          "x": 768,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 3
+        },
+        "adult_top_swim_4": {
+          "x": 1024,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 4
+        },
+        "adult_top_swim_5": {
+          "x": 1280,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 5
+        },
+        "sprint_side": {
+          "x": 0,
+          "y": 1056,
+          "w": 256,
+          "h": 176,
+          "row": 6,
+          "col": 0
+        }
+      }
+    },
+    "snail_mystery": {
+      "sheet": "sheets/snail_mystery_spritesheet.png",
+      "sheetSize": {
+        "width": 1024,
+        "height": 1232
+      },
+      "growthPhases": {
+        "fry": {
+          "minGrowth": 0.0,
+          "maxGrowth": 0.35,
+          "scaleMultiplier": 0.48
+        },
+        "juvenile": {
+          "minGrowth": 0.35,
+          "maxGrowth": 0.75,
+          "scaleMultiplier": 0.74
+        },
+        "adult": {
+          "minGrowth": 0.75,
+          "maxGrowth": 1.0,
+          "scaleMultiplier": 1.0
+        }
+      },
+      "angles": [
+        "side",
+        "top"
+      ],
+      "animations": {
+        "fry_side_glide": {
+          "frames": [
+            "fry_side_glide_0",
+            "fry_side_glide_1",
+            "fry_side_glide_2",
+            "fry_side_glide_3"
+          ],
+          "fps": 6,
+          "loop": true
+        },
+        "fry_top_glide": {
+          "frames": [
+            "fry_top_glide_0",
+            "fry_top_glide_1",
+            "fry_top_glide_2",
+            "fry_top_glide_3"
+          ],
+          "fps": 6,
+          "loop": true
+        },
+        "juvenile_side_glide": {
+          "frames": [
+            "juvenile_side_glide_0",
+            "juvenile_side_glide_1",
+            "juvenile_side_glide_2",
+            "juvenile_side_glide_3"
+          ],
+          "fps": 6,
+          "loop": true
+        },
+        "juvenile_top_glide": {
+          "frames": [
+            "juvenile_top_glide_0",
+            "juvenile_top_glide_1",
+            "juvenile_top_glide_2",
+            "juvenile_top_glide_3"
+          ],
+          "fps": 6,
+          "loop": true
+        },
+        "adult_side_glide": {
+          "frames": [
+            "adult_side_glide_0",
+            "adult_side_glide_1",
+            "adult_side_glide_2",
+            "adult_side_glide_3"
+          ],
+          "fps": 6,
+          "loop": true
+        },
+        "adult_top_glide": {
+          "frames": [
+            "adult_top_glide_0",
+            "adult_top_glide_1",
+            "adult_top_glide_2",
+            "adult_top_glide_3"
+          ],
+          "fps": 6,
+          "loop": true
+        },
+        "behaviors_0": {
+          "frames": [
+            "siphon_side",
+            "parasnail_side",
+            "tuck_side"
+          ],
+          "fps": 6,
+          "loop": false
+        }
+      },
+      "frames": {
+        "fry_side_glide_0": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 0
+        },
+        "fry_side_glide_1": {
+          "x": 256,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 1
+        },
+        "fry_side_glide_2": {
+          "x": 512,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 2
+        },
+        "fry_side_glide_3": {
+          "x": 768,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 3
+        },
+        "fry_top_glide_0": {
+          "x": 0,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 0
+        },
+        "fry_top_glide_1": {
+          "x": 256,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 1
+        },
+        "fry_top_glide_2": {
+          "x": 512,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 2
+        },
+        "fry_top_glide_3": {
+          "x": 768,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 3
+        },
+        "juvenile_side_glide_0": {
+          "x": 0,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 0
+        },
+        "juvenile_side_glide_1": {
+          "x": 256,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 1
+        },
+        "juvenile_side_glide_2": {
+          "x": 512,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 2
+        },
+        "juvenile_side_glide_3": {
+          "x": 768,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 3
+        },
+        "juvenile_top_glide_0": {
+          "x": 0,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 0
+        },
+        "juvenile_top_glide_1": {
+          "x": 256,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 1
+        },
+        "juvenile_top_glide_2": {
+          "x": 512,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 2
+        },
+        "juvenile_top_glide_3": {
+          "x": 768,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 3
+        },
+        "adult_side_glide_0": {
+          "x": 0,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 0
+        },
+        "adult_side_glide_1": {
+          "x": 256,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 1
+        },
+        "adult_side_glide_2": {
+          "x": 512,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 2
+        },
+        "adult_side_glide_3": {
+          "x": 768,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 3
+        },
+        "adult_top_glide_0": {
+          "x": 0,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 0
+        },
+        "adult_top_glide_1": {
+          "x": 256,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 1
+        },
+        "adult_top_glide_2": {
+          "x": 512,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 2
+        },
+        "adult_top_glide_3": {
+          "x": 768,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 3
+        },
+        "siphon_side": {
+          "x": 0,
+          "y": 1056,
+          "w": 256,
+          "h": 176,
+          "row": 6,
+          "col": 0
+        },
+        "parasnail_side": {
+          "x": 256,
+          "y": 1056,
+          "w": 256,
+          "h": 176,
+          "row": 6,
+          "col": 1
+        },
+        "tuck_side": {
+          "x": 512,
+          "y": 1056,
+          "w": 256,
+          "h": 176,
+          "row": 6,
+          "col": 2
+        }
+      }
+    },
+    "snail_nerite": {
+      "sheet": "sheets/snail_nerite_spritesheet.png",
+      "sheetSize": {
+        "width": 1024,
+        "height": 1232
+      },
+      "growthPhases": {
+        "fry": {
+          "minGrowth": 0.0,
+          "maxGrowth": 0.35,
+          "scaleMultiplier": 0.48
+        },
+        "juvenile": {
+          "minGrowth": 0.35,
+          "maxGrowth": 0.75,
+          "scaleMultiplier": 0.74
+        },
+        "adult": {
+          "minGrowth": 0.75,
+          "maxGrowth": 1.0,
+          "scaleMultiplier": 1.0
+        }
+      },
+      "angles": [
+        "side",
+        "top"
+      ],
+      "animations": {
+        "fry_side_glide": {
+          "frames": [
+            "fry_side_glide_0",
+            "fry_side_glide_1",
+            "fry_side_glide_2",
+            "fry_side_glide_3"
+          ],
+          "fps": 6,
+          "loop": true
+        },
+        "fry_top_glide": {
+          "frames": [
+            "fry_top_glide_0",
+            "fry_top_glide_1",
+            "fry_top_glide_2",
+            "fry_top_glide_3"
+          ],
+          "fps": 6,
+          "loop": true
+        },
+        "juvenile_side_glide": {
+          "frames": [
+            "juvenile_side_glide_0",
+            "juvenile_side_glide_1",
+            "juvenile_side_glide_2",
+            "juvenile_side_glide_3"
+          ],
+          "fps": 6,
+          "loop": true
+        },
+        "juvenile_top_glide": {
+          "frames": [
+            "juvenile_top_glide_0",
+            "juvenile_top_glide_1",
+            "juvenile_top_glide_2",
+            "juvenile_top_glide_3"
+          ],
+          "fps": 6,
+          "loop": true
+        },
+        "adult_side_glide": {
+          "frames": [
+            "adult_side_glide_0",
+            "adult_side_glide_1",
+            "adult_side_glide_2",
+            "adult_side_glide_3"
+          ],
+          "fps": 6,
+          "loop": true
+        },
+        "adult_top_glide": {
+          "frames": [
+            "adult_top_glide_0",
+            "adult_top_glide_1",
+            "adult_top_glide_2",
+            "adult_top_glide_3"
+          ],
+          "fps": 6,
+          "loop": true
+        },
+        "behaviors_0": {
+          "frames": [
+            "graze_side"
+          ],
+          "fps": 6,
+          "loop": false
+        }
+      },
+      "frames": {
+        "fry_side_glide_0": {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 0
+        },
+        "fry_side_glide_1": {
+          "x": 256,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 1
+        },
+        "fry_side_glide_2": {
+          "x": 512,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 2
+        },
+        "fry_side_glide_3": {
+          "x": 768,
+          "y": 0,
+          "w": 256,
+          "h": 176,
+          "row": 0,
+          "col": 3
+        },
+        "fry_top_glide_0": {
+          "x": 0,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 0
+        },
+        "fry_top_glide_1": {
+          "x": 256,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 1
+        },
+        "fry_top_glide_2": {
+          "x": 512,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 2
+        },
+        "fry_top_glide_3": {
+          "x": 768,
+          "y": 176,
+          "w": 256,
+          "h": 176,
+          "row": 1,
+          "col": 3
+        },
+        "juvenile_side_glide_0": {
+          "x": 0,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 0
+        },
+        "juvenile_side_glide_1": {
+          "x": 256,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 1
+        },
+        "juvenile_side_glide_2": {
+          "x": 512,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 2
+        },
+        "juvenile_side_glide_3": {
+          "x": 768,
+          "y": 352,
+          "w": 256,
+          "h": 176,
+          "row": 2,
+          "col": 3
+        },
+        "juvenile_top_glide_0": {
+          "x": 0,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 0
+        },
+        "juvenile_top_glide_1": {
+          "x": 256,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 1
+        },
+        "juvenile_top_glide_2": {
+          "x": 512,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 2
+        },
+        "juvenile_top_glide_3": {
+          "x": 768,
+          "y": 528,
+          "w": 256,
+          "h": 176,
+          "row": 3,
+          "col": 3
+        },
+        "adult_side_glide_0": {
+          "x": 0,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 0
+        },
+        "adult_side_glide_1": {
+          "x": 256,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 1
+        },
+        "adult_side_glide_2": {
+          "x": 512,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 2
+        },
+        "adult_side_glide_3": {
+          "x": 768,
+          "y": 704,
+          "w": 256,
+          "h": 176,
+          "row": 4,
+          "col": 3
+        },
+        "adult_top_glide_0": {
+          "x": 0,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 0
+        },
+        "adult_top_glide_1": {
+          "x": 256,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 1
+        },
+        "adult_top_glide_2": {
+          "x": 512,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 2
+        },
+        "adult_top_glide_3": {
+          "x": 768,
+          "y": 880,
+          "w": 256,
+          "h": 176,
+          "row": 5,
+          "col": 3
+        },
+        "graze_side": {
+          "x": 0,
+          "y": 1056,
+          "w": 256,
+          "h": 176,
+          "row": 6,
+          "col": 0
+        }
+      }
+    }
+  },
+  "decor": {
+    "java_fern": {
+      "file": "poses/decor/java_fern.png",
+      "x": 0,
+      "y": 0,
+      "w": 320,
+      "h": 320
+    },
+    "anubias": {
+      "file": "poses/decor/anubias.png",
+      "x": 320,
+      "y": 0,
+      "w": 320,
+      "h": 320
+    },
+    "moss_ball": {
+      "file": "poses/decor/moss_ball.png",
+      "x": 640,
+      "y": 0,
+      "w": 320,
+      "h": 320
+    },
+    "cactus": {
+      "file": "poses/decor/cactus.png",
+      "x": 0,
+      "y": 320,
+      "w": 320,
+      "h": 320
+    },
+    "driftwood_stones": {
+      "file": "poses/decor/driftwood_stones.png",
+      "x": 320,
+      "y": 320,
+      "w": 320,
+      "h": 320
+    },
+    "bubbler": {
+      "file": "poses/decor/bubbler.png",
+      "x": 640,
+      "y": 320,
+      "w": 320,
+      "h": 320
+    }
+  },
+  "customModular": {
+    "body_fusiform_side": {
+      "file": "poses/custom_modular/body_fusiform_side.png",
+      "x": 0,
+      "y": 0,
+      "w": 256,
+      "h": 176
+    },
+    "body_compressiform_side": {
+      "file": "poses/custom_modular/body_compressiform_side.png",
+      "x": 256,
+      "y": 0,
+      "w": 256,
+      "h": 176
+    },
+    "body_globiform_side": {
+      "file": "poses/custom_modular/body_globiform_side.png",
+      "x": 512,
+      "y": 0,
+      "w": 256,
+      "h": 176
+    },
+    "body_fusiform_top": {
+      "file": "poses/custom_modular/body_fusiform_top.png",
+      "x": 0,
+      "y": 176,
+      "w": 256,
+      "h": 176
+    },
+    "body_compressiform_top": {
+      "file": "poses/custom_modular/body_compressiform_top.png",
+      "x": 256,
+      "y": 176,
+      "w": 256,
+      "h": 176
+    },
+    "body_globiform_top": {
+      "file": "poses/custom_modular/body_globiform_top.png",
+      "x": 512,
+      "y": 176,
+      "w": 256,
+      "h": 176
+    },
+    "tail_halfmoon": {
+      "file": "poses/custom_modular/tail_halfmoon.png",
+      "x": 0,
+      "y": 352,
+      "w": 256,
+      "h": 176
+    },
+    "tail_crowntail": {
+      "file": "poses/custom_modular/tail_crowntail.png",
+      "x": 256,
+      "y": 352,
+      "w": 256,
+      "h": 176
+    },
+    "tail_forked": {
+      "file": "poses/custom_modular/tail_forked.png",
+      "x": 512,
+      "y": 352,
+      "w": 256,
+      "h": 176
+    },
+    "tail_double": {
+      "file": "poses/custom_modular/tail_double.png",
+      "x": 768,
+      "y": 352,
+      "w": 256,
+      "h": 176
+    }
+  }
+}
