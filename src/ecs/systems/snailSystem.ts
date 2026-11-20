@@ -2,30 +2,39 @@ import type { World } from 'koota';
 import { TANK_BOUNDS } from '../../registry/decor';
 import {
   CreatureDna,
+  CreatureMind,
   CreatureVitals,
   FoodPellet,
   IsFood,
+  IsPlant,
   IsSnail,
+  PlantBiology,
   Position,
   SnailLocomotion,
 } from '../traits';
 
 /**
- * Updates freshwater snail surface crawling across the sand bed and tank walls,
- * including occasional Mystery Snail parasnailing and algae/detritus foraging.
+ * Updates marine & freshwater snail surface crawling across the sand bed and tank walls,
+ * including parasnailing and algae/detritus/decaying-plant foraging.
  */
 export function runSnailSystem(world: World, dt: number): void {
   const clampedDt = Math.min(dt, 0.05);
-  const floorY = TANK_BOUNDS.floorY + 0.12;
-  const maxWallY = TANK_BOUNDS.surfaceY - 0.25;
-  const boundX = TANK_BOUNDS.halfW - 0.16;
-  const boundZ = TANK_BOUNDS.halfD - 0.16;
+  const floorY = TANK_BOUNDS.floorY + 0.14;
+  const maxWallY = TANK_BOUNDS.surfaceY - 0.35;
+  const boundX = TANK_BOUNDS.halfW - 0.25;
+  const boundZ = TANK_BOUNDS.halfD - 0.25;
 
-  // Collect floor-level food pellets for scavenging snails
   const floorFoods: Array<{ x: number; z: number; entity: ReturnType<World['query']>[number] }> = [];
   world.query(IsFood, Position, FoodPellet).readEach(([pos, pellet], entity) => {
-    if (!pellet.eaten && pos.y < floorY + 0.25) {
+    if (!pellet.eaten && pos.y < floorY + 0.35) {
       floorFoods.push({ x: pos.x, z: pos.z, entity });
+    }
+  });
+
+  const decayingPlants: Array<{ x: number; z: number }> = [];
+  world.query(IsPlant, Position, PlantBiology).readEach(([pos, plant]) => {
+    if (plant.health < 35) {
+      decayingPlants.push({ x: pos.x, z: pos.z });
     }
   });
 
@@ -36,6 +45,7 @@ export function runSnailSystem(world: World, dt: number): void {
     const loco = entity.get(SnailLocomotion)!;
     const dna = entity.get(CreatureDna)!;
     const vitals = entity.get(CreatureVitals)!;
+    const mind = entity.get(CreatureMind);
 
     if (!vitals.alive) continue;
 
@@ -44,9 +54,8 @@ export function runSnailSystem(world: World, dt: number): void {
     t += clampedDt;
 
     if (surface === 'parasnail') {
-      // Gentle Mystery Snail drift downward after letting go near top
       y -= 0.32 * clampedDt;
-      x += Math.sin(t * 2.5) * 0.12 * clampedDt;
+      x += Math.sin(t * 2.5) * 0.14 * clampedDt;
       if (y <= floorY) {
         y = floorY;
         surface = 'floor';
@@ -58,7 +67,6 @@ export function runSnailSystem(world: World, dt: number): void {
       x += vx * clampedDt;
       if (x < -boundX || x > boundX) vx *= -1;
       if (y >= maxWallY) {
-        // Mystery snails extend siphon briefly or parasnail back down
         if (dna.hasLabyrinth && Math.random() < 0.35) {
           surface = 'parasnail';
           siphonExtend = 1;
@@ -72,21 +80,31 @@ export function runSnailSystem(world: World, dt: number): void {
       }
       siphonExtend = Math.max(0, siphonExtend - clampedDt * 0.25);
     } else {
-      // Crawling on sand substrate floor
       y = floorY;
-      // Steer toward fallen pellets if omnivorous scavenger
       if (dna.diet !== 'herbivore' && floorFoods.length > 0) {
         const target = floorFoods[0];
         const dx = target.x - x;
         const dz = target.z - z;
         const dist = Math.hypot(dx, dz);
-        if (dist < 1.6 && dist > 1e-4) {
+        if (dist < 2.2 && dist > 1e-4) {
           vx = (dx / dist) * dna.maxSpeed;
           vz = (dz / dist) * dna.maxSpeed;
         }
-        if (dist < 0.26) {
+        if (dist < 0.32) {
           target.entity.set(FoodPellet, { eaten: true });
           entity.set(CreatureVitals, { fullness: Math.min(100, vitals.fullness + 30) });
+          if (mind) {
+            entity.set(CreatureMind, { thought: 'Scavenged sunken food morsel' });
+          }
+        }
+      } else if (decayingPlants.length > 0 && vitals.fullness < 80) {
+        const p = decayingPlants[0];
+        const dx = p.x - x;
+        const dz = p.z - z;
+        const dist = Math.hypot(dx, dz);
+        if (dist < 3.0 && dist > 0.45) {
+          vx = (dx / dist) * dna.maxSpeed;
+          vz = (dz / dist) * dna.maxSpeed;
         }
       }
 
@@ -101,7 +119,6 @@ export function runSnailSystem(world: World, dt: number): void {
         z = boundZ;
         vz *= -1;
       } else if (z < -boundZ) {
-        // Transition smoothly onto back glass wall occasionally
         z = -boundZ;
         if (Math.random() < 0.45) {
           surface = 'backWall';

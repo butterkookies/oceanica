@@ -15,8 +15,9 @@ import {
   VolumeX,
 } from 'lucide-react';
 import { useTrait, useWorld } from 'koota/react';
+import { BIOME_PRESETS, type BiomeId } from '../registry/decor';
 import { TankEnvironment, type CameraViewMode, type LightingPreset } from '../ecs/traits';
-import { persistWorldState } from '../ecs/world';
+import { persistWorldState, switchTankBiome } from '../ecs/world';
 import { ambientAudio } from '../utils/ambientAudio';
 
 interface Props {
@@ -29,6 +30,7 @@ const CAMERA_OPTIONS: Array<{ id: CameraViewMode; label: string }> = [
   { id: 'free', label: '3D' },
 ];
 
+const BIOME_ORDER: BiomeId[] = ['marine_reef', 'freshwater_tropical', 'freshwater_coldwater'];
 const LIGHTING_CYCLE: LightingPreset[] = ['auto', 'morning', 'day', 'sunset', 'night'];
 
 function LightingIcon({ phase }: { phase: LightingPreset }) {
@@ -37,22 +39,6 @@ function LightingIcon({ phase }: { phase: LightingPreset }) {
   if (phase === 'night') return <Moon className="w-3.5 h-3.5" />;
   if (phase === 'auto') return <Sparkles className="w-3.5 h-3.5" />;
   return <Sun className="w-3.5 h-3.5" />;
-}
-
-function PixelGridIcon() {
-  return (
-    <svg viewBox="0 0 12 12" className="w-3.5 h-3.5 fill-current" aria-hidden="true">
-      <rect x="1" y="1" width="3" height="3" />
-      <rect x="5" y="1" width="3" height="3" opacity="0.65" />
-      <rect x="9" y="1" width="2" height="3" />
-      <rect x="1" y="5" width="3" height="3" opacity="0.65" />
-      <rect x="5" y="5" width="3" height="3" />
-      <rect x="9" y="5" width="2" height="3" opacity="0.65" />
-      <rect x="1" y="9" width="3" height="2" />
-      <rect x="5" y="9" width="3" height="2" opacity="0.65" />
-      <rect x="9" y="9" width="2" height="2" />
-    </svg>
-  );
 }
 
 export function TopBar({ onOpenCreator }: Props) {
@@ -96,16 +82,6 @@ export function TopBar({ onOpenCreator }: Props) {
     });
   };
 
-  const togglePixelArt = () => {
-    world.set(TankEnvironment, { pixelArt: !env.pixelArt });
-    persistWorldState(world);
-  };
-
-  const togglePixelScale = () => {
-    world.set(TankEnvironment, { pixelScale: env.pixelScale === 'crisp' ? 'chunky' : 'crisp' });
-    persistWorldState(world);
-  };
-
   if (env.ambientMode) {
     return (
       <div className="pointer-events-none fixed inset-x-0 top-0 z-30 flex justify-end p-3">
@@ -123,33 +99,55 @@ export function TopBar({ onOpenCreator }: Props) {
 
   return (
     <header className="pointer-events-none fixed inset-x-0 top-0 z-30 flex flex-wrap items-center justify-between gap-2 p-3">
-      {/* Brand + Dual Mode Toggle */}
+      {/* Brand + Biome Selector + Simulation Mode */}
       <div className="pointer-events-auto flex flex-wrap items-center gap-2 rounded-2xl bg-slate-900/75 px-3 py-1.5 backdrop-blur-md border border-white/15 shadow-lg">
         <span className="text-sm font-semibold tracking-tight text-sky-200 flex items-center gap-1.5">
           <Compass className="w-4 h-4 text-sky-400" />
           Oceanica
         </span>
         <div className="h-4 w-px bg-white/15" />
+
+        <div className="flex items-center rounded-xl bg-slate-950/70 p-0.5 border border-white/10">
+          {BIOME_ORDER.map((biomeId) => {
+            const preset = BIOME_PRESETS[biomeId];
+            const active = env.biome === biomeId;
+            return (
+              <button
+                key={biomeId}
+                onClick={() => switchTankBiome(world, biomeId)}
+                title={preset.description}
+                className={`rounded-lg px-2 py-1 text-xs font-medium transition-colors cursor-pointer ${
+                  active
+                    ? 'bg-cyan-500 text-slate-950 font-semibold'
+                    : 'text-slate-300 hover:text-white'
+                }`}
+              >
+                {preset.label}
+              </button>
+            );
+          })}
+        </div>
+
         <div className="flex items-center rounded-xl bg-slate-950/70 p-0.5 border border-white/10">
           <button
-            onClick={() => toggleMode('sandbox')}
-            className={`rounded-lg px-2.5 py-1 text-xs font-medium transition-colors cursor-pointer ${
-              env.mode === 'sandbox'
-                ? 'bg-emerald-500 text-slate-950 font-semibold'
-                : 'text-slate-300 hover:text-white'
-            }`}
-          >
-            Cozy Sandbox
-          </button>
-          <button
             onClick={() => toggleMode('realistic')}
-            className={`rounded-lg px-2.5 py-1 text-xs font-medium transition-colors cursor-pointer ${
+            className={`rounded-lg px-2 py-1 text-xs font-medium transition-colors cursor-pointer ${
               env.mode === 'realistic'
                 ? 'bg-amber-400 text-slate-950 font-semibold'
                 : 'text-slate-300 hover:text-white'
             }`}
           >
             Realistic Care
+          </button>
+          <button
+            onClick={() => toggleMode('sandbox')}
+            className={`rounded-lg px-2 py-1 text-xs font-medium transition-colors cursor-pointer ${
+              env.mode === 'sandbox'
+                ? 'bg-emerald-500 text-slate-950 font-semibold'
+                : 'text-slate-300 hover:text-white'
+            }`}
+          >
+            Sandbox
           </button>
         </div>
       </div>
@@ -181,28 +179,6 @@ export function TopBar({ onOpenCreator }: Props) {
           <Box className="w-3.5 h-3.5" />
           Spine
         </button>
-        <div className="h-4 w-px bg-white/10 mx-0.5" />
-        <button
-          onClick={togglePixelArt}
-          title={env.pixelArt ? 'Switch to Smooth 3D Rendering' : 'Switch to Retro Pixel Art Shader'}
-          className={`rounded-xl px-2.5 py-1 text-xs font-medium transition-colors cursor-pointer flex items-center gap-1.5 ${
-            env.pixelArt
-              ? 'bg-violet-400/25 text-violet-200 border border-violet-400/45 font-semibold'
-              : 'bg-slate-800/70 text-slate-300 border border-white/10 hover:text-white'
-          }`}
-        >
-          <PixelGridIcon />
-          {env.pixelArt ? 'Pixel Art' : 'Smooth 3D'}
-        </button>
-        {env.pixelArt && (
-          <button
-            onClick={togglePixelScale}
-            title="Cycle Pixel Grid Density (Crisp vs Chunky)"
-            className="rounded-xl px-2 py-1 text-[11px] font-medium text-violet-200/90 hover:text-white hover:bg-white/10 transition-colors cursor-pointer capitalize"
-          >
-            {env.pixelScale}
-          </button>
-        )}
       </div>
 
       {/* Actions */}
@@ -212,7 +188,7 @@ export function TopBar({ onOpenCreator }: Props) {
           className="flex items-center gap-1 rounded-xl bg-sky-500 hover:bg-sky-400 px-3 py-1 text-xs font-semibold text-slate-950 transition-colors cursor-pointer"
         >
           <Plus className="w-3.5 h-3.5" />
-          Add Fish
+          Add Life
         </button>
         <button
           onClick={toggleDecorate}
@@ -223,7 +199,7 @@ export function TopBar({ onOpenCreator }: Props) {
           }`}
         >
           <Hammer className="w-3.5 h-3.5" />
-          {env.decorateMode ? 'Done' : 'Decorate'}
+          {env.decorateMode ? 'Done' : 'Aquascape'}
         </button>
         <button
           onClick={cycleLighting}

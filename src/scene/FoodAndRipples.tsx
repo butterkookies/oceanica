@@ -16,7 +16,7 @@ export function FoodMesh({ entity }: { entity: Entity }) {
   return (
     <mesh ref={meshRef}>
       <sphereGeometry args={[0.048, 8, 8]} />
-      <meshStandardMaterial color="#d97706" roughness={0.6} />
+      <meshStandardMaterial color="#fbbf24" emissive="#f59e0b" emissiveIntensity={0.45} roughness={0.4} />
     </mesh>
   );
 }
@@ -35,11 +35,11 @@ export function RippleMesh({ entity }: { entity: Entity }) {
   });
 
   return (
-    <mesh ref={meshRef} rotation={[-Math.PI / 2, 0, 0]}>
+    <mesh ref={meshRef} rotation={[-Math.PI / 2, 0, 0]} raycast={() => null}>
       <ringGeometry args={[0.85, 1.0, 28]} />
       <meshBasicMaterial
         ref={matRef}
-        color="#bae6fd"
+        color="#7dd3fc"
         transparent
         opacity={0.85}
         side={THREE.DoubleSide}

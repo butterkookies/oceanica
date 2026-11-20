@@ -26,7 +26,7 @@ function SelectedDecorControls({ entity }: { entity: Entity }) {
   return (
     <div className="flex flex-wrap items-center justify-between gap-2 pb-2 mb-2 border-b border-white/10">
       <div className="text-xs text-emerald-200">
-        Selected: <strong>{bp.label}</strong> — tap anywhere on sand floor to move
+        Selected: <strong>{bp.label}</strong> — click sand floor to move
       </div>
       <div className="flex items-center gap-1.5">
         <button
@@ -62,7 +62,7 @@ function SelectedDecorControls({ entity }: { entity: Entity }) {
         <button
           onClick={removeDecor}
           className="rounded-lg bg-rose-500/20 hover:bg-rose-500/35 px-2 py-1 text-xs text-rose-200 border border-rose-400/30 cursor-pointer flex items-center gap-1"
-          title="Remove Decor"
+          title="Remove Item"
         >
           <Trash2 className="w-3.5 h-3.5" />
         </button>
@@ -83,7 +83,12 @@ export function DecorDock() {
       ? decorEntities.find((e) => e.id() === env.selectedEntityId)
       : undefined;
 
-  const catalogItems = Object.values(DECOR_CATALOG);
+  const isMarine = env.salinity >= 20;
+  const catalogItems = Object.values(DECOR_CATALOG).sort((a, b) => {
+    const aFit = a.salinityBand === 'universal' || (isMarine ? a.salinityBand === 'marine' : a.salinityBand === 'freshwater') ? 0 : 1;
+    const bFit = b.salinityBand === 'universal' || (isMarine ? b.salinityBand === 'marine' : b.salinityBand === 'freshwater') ? 0 : 1;
+    return aFit - bFit;
+  });
 
   const selectPlacement = (kind: DecorKind) => {
     world.set(TankEnvironment, {
@@ -93,37 +98,42 @@ export function DecorDock() {
   };
 
   return (
-    <div className="pointer-events-auto fixed inset-x-3 bottom-3 z-30 mx-auto max-w-4xl rounded-2xl bg-slate-900/85 p-3 backdrop-blur-md border border-emerald-400/30 shadow-2xl">
+    <div className="pointer-events-auto fixed inset-x-3 bottom-3 z-30 mx-auto max-w-5xl rounded-2xl bg-slate-900/85 p-3 backdrop-blur-md border border-emerald-400/30 shadow-2xl">
       {selectedDecor && <SelectedDecorControls entity={selectedDecor} />}
 
       <div className="flex items-center justify-between gap-2 mb-2">
         <span className="text-xs font-semibold text-emerald-300">
           {env.placingDecorKind
-            ? `Tap the tank sand floor to place: ${DECOR_CATALOG[env.placingDecorKind].label}`
-            : 'Decorate Mode — pick an item to add, or click any tank item to reposition'}
+            ? `Click the tank sand floor to place: ${DECOR_CATALOG[env.placingDecorKind].label}`
+            : 'Aquascape Mode — place living flora, reef rock, or click any tank item to reposition'}
         </span>
       </div>
 
       <div className="flex items-stretch gap-2 overflow-x-auto pb-1">
         {catalogItems.map((bp) => {
           const isPlacing = env.placingDecorKind === bp.kind;
+          const compatible =
+            bp.salinityBand === 'universal' ||
+            (isMarine ? bp.salinityBand === 'marine' : bp.salinityBand === 'freshwater');
           return (
             <button
               key={bp.kind}
               onClick={() => selectPlacement(bp.kind)}
-              className={`shrink-0 flex flex-col items-start rounded-xl px-3 py-2 text-left border transition-colors cursor-pointer min-w-34 ${
+              className={`shrink-0 flex flex-col items-start rounded-xl px-3 py-2 text-left border transition-colors cursor-pointer min-w-36 ${
                 isPlacing
                   ? 'bg-emerald-500 text-slate-950 border-emerald-300 font-semibold'
-                  : 'bg-slate-800/80 text-slate-200 border-white/10 hover:bg-slate-700/80'
+                  : compatible
+                    ? 'bg-slate-800/85 text-slate-200 border-white/15 hover:bg-slate-700/85'
+                    : 'bg-slate-900/60 text-slate-400 border-white/5 opacity-70 hover:opacity-100'
               }`}
             >
               <span className="text-xs font-semibold">{bp.label}</span>
               <span
-                className={`text-xs capitalize ${
+                className={`text-[11px] capitalize ${
                   isPlacing ? 'text-slate-900' : 'text-slate-400'
                 }`}
               >
-                {bp.category} {bp.oxygenBoost > 0 ? '• +O₂' : ''}
+                {bp.salinityBand} {bp.isLivingPlant ? '• Flora' : ''} {bp.oxygenBoost > 0 ? '• +O₂' : bp.biofilterBonus >= 12 ? '• Biofilter' : ''}
               </span>
             </button>
           );

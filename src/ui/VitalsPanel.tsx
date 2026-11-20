@@ -11,13 +11,14 @@ import {
   Wind,
 } from 'lucide-react';
 import { useTrait, useWorld } from 'koota/react';
+import { BIOME_PRESETS } from '../registry/decor';
 import { TankAlerts, TankEnvironment } from '../ecs/traits';
 import {
   dropFoodPellets,
   persistWorldState,
   pulseOxygenAerator,
   resetWorldToStarter,
-  siphonAndCleanTank,
+  waterChangeAndSiphon,
 } from '../ecs/world';
 
 function StatMeter({ label, value, color }: { label: string; value: number; color: string }) {
@@ -35,6 +36,12 @@ function StatMeter({ label, value, color }: { label: string; value: number; colo
   );
 }
 
+function chemTone(val: number, warn: number, danger: number): string {
+  if (val >= danger) return 'text-rose-300';
+  if (val >= warn) return 'text-amber-300';
+  return 'text-emerald-300';
+}
+
 export function VitalsPanel() {
   const world = useWorld();
   const env = useTrait(world, TankEnvironment);
@@ -44,22 +51,26 @@ export function VitalsPanel() {
   if (!env || env.ambientMode || env.decorateMode) return null;
 
   const warnings = alerts?.warnings ?? [];
+  const biomeLabel = BIOME_PRESETS[env.biome]?.label ?? 'Marine Reef';
 
   return (
-    <aside className="pointer-events-auto fixed left-3 bottom-3 z-20 w-72 max-w-[calc(100vw-1.5rem)] rounded-2xl bg-slate-900/75 p-3 backdrop-blur-md border border-white/15 shadow-xl flex flex-col gap-2.5">
+    <aside className="pointer-events-auto fixed left-3 bottom-3 z-20 w-80 max-w-[calc(100vw-1.5rem)] rounded-2xl bg-slate-900/75 p-3 backdrop-blur-md border border-white/15 shadow-xl flex flex-col gap-2.5">
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5 flex-wrap">
           <span className="text-xs font-semibold uppercase tracking-wider text-sky-300">
-            Tank Ecosystem
+            {biomeLabel}
           </span>
-          <span className="rounded-full bg-amber-400/20 px-2 py-0.5 text-xs font-semibold text-amber-300 border border-amber-400/30">
+          <span className="rounded-full bg-cyan-500/15 px-2 py-0.5 text-[11px] font-mono text-cyan-200 border border-cyan-400/25">
+            {env.salinity.toFixed(0)} ppt • pH {env.ph.toFixed(1)}
+          </span>
+          <span className="rounded-full bg-amber-400/20 px-2 py-0.5 text-[11px] font-semibold text-amber-300 border border-amber-400/30">
             {Math.floor(env.carePoints)} pts
           </span>
         </div>
         <button
           onClick={() => setCollapsed((c) => !c)}
           className="rounded-lg p-1 text-slate-400 hover:text-white hover:bg-white/10 cursor-pointer"
-          title={collapsed ? 'Expand Tank Vitals' : 'Collapse Tank Vitals'}
+          title={collapsed ? 'Expand Water Chemistry' : 'Collapse Water Chemistry'}
         >
           {collapsed ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
         </button>
@@ -67,9 +78,31 @@ export function VitalsPanel() {
 
       {!collapsed && (
         <>
-          <div className="grid grid-cols-2 gap-2.5">
-            <StatMeter label="Oxygen (O₂)" value={env.oxygen} color="bg-cyan-400" />
+          <div className="grid grid-cols-3 gap-2">
+            <StatMeter label="O₂" value={env.oxygen} color="bg-cyan-400" />
             <StatMeter label="Clarity" value={env.cleanliness} color="bg-emerald-400" />
+            <StatMeter label="Biofilter" value={env.biofilterMaturity} color="bg-violet-400" />
+          </div>
+
+          <div className="grid grid-cols-3 gap-1.5 rounded-xl bg-slate-950/65 px-2.5 py-1.5 border border-white/10 text-center">
+            <div>
+              <div className="text-[10px] uppercase tracking-wider text-slate-400">NH₃</div>
+              <div className={`text-xs font-mono font-semibold ${chemTone(env.ammonia, 0.12, 0.25)}`}>
+                {env.ammonia.toFixed(2)}
+              </div>
+            </div>
+            <div>
+              <div className="text-[10px] uppercase tracking-wider text-slate-400">NO₂⁻</div>
+              <div className={`text-xs font-mono font-semibold ${chemTone(env.nitrite, 0.15, 0.35)}`}>
+                {env.nitrite.toFixed(2)}
+              </div>
+            </div>
+            <div>
+              <div className="text-[10px] uppercase tracking-wider text-slate-400">NO₃⁻</div>
+              <div className={`text-xs font-mono font-semibold ${chemTone(env.nitrate, 25, 45)}`}>
+                {env.nitrate.toFixed(1)} ppm
+              </div>
+            </div>
           </div>
 
           <div className="flex items-center justify-between gap-2 text-xs">
@@ -87,13 +120,13 @@ export function VitalsPanel() {
                 world.set(TankEnvironment, { temperature: Number(e.target.value) });
                 persistWorldState(world);
               }}
-              className="w-28 accent-sky-400 cursor-pointer"
+              className="w-32 accent-sky-400 cursor-pointer"
             />
           </div>
 
           <div className="grid grid-cols-4 gap-1.5 pt-0.5">
             <button
-              onClick={() => dropFoodPellets(world, (Math.random() - 0.5) * 3.5, (Math.random() - 0.5) * 2.0, 5)}
+              onClick={() => dropFoodPellets(world, (Math.random() - 0.5) * 6.5, (Math.random() - 0.5) * 3.5, 5)}
               className="flex flex-col items-center gap-0.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 border border-amber-400/30 py-1.5 text-xs font-medium text-amber-200 cursor-pointer"
             >
               <Fish className="w-3.5 h-3.5" />
@@ -104,18 +137,19 @@ export function VitalsPanel() {
               className="flex flex-col items-center gap-0.5 rounded-xl bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-400/30 py-1.5 text-xs font-medium text-cyan-200 cursor-pointer"
             >
               <Wind className="w-3.5 h-3.5" />
-              Bubble
+              Aerate
             </button>
             <button
-              onClick={() => siphonAndCleanTank(world)}
-              className="flex flex-col items-center gap-0.5 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 border border-emerald-400/30 py-1.5 text-xs font-medium text-emerald-200 cursor-pointer"
+              onClick={() => waterChangeAndSiphon(world)}
+              title="Perform 38% partial water change & siphon waste"
+              className="flex flex-col items-center gap-0.5 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 border border-emerald-400/30 py-1.5 text-[11px] font-medium text-emerald-200 cursor-pointer"
             >
               <Droplets className="w-3.5 h-3.5" />
-              Clean
+              Water Chg
             </button>
             <button
               onClick={() => resetWorldToStarter(world)}
-              title="Reset tank back to starter ecosystem"
+              title="Reset current biome back to starter ecosystem"
               className="flex flex-col items-center gap-0.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-white/10 py-1.5 text-xs font-medium text-slate-300 cursor-pointer"
             >
               <RotateCcw className="w-3.5 h-3.5" />
@@ -136,8 +170,8 @@ export function VitalsPanel() {
             <p className="text-xs text-slate-400 flex items-center gap-1.5">
               <Sparkles className="w-3.5 h-3.5 text-sky-400 shrink-0" />
               {env.mode === 'sandbox'
-                ? 'Cozy Sandbox active — tap anywhere in water to feed.'
-                : 'Ecosystem balanced — keep vitals healthy.'}
+                ? 'Sandbox active — chemistry buffered & stress-free.'
+                : 'Nitrogen cycle & water chemistry balanced.'}
             </p>
           )}
         </>

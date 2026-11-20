@@ -17,8 +17,8 @@ import {
 import { CameraRig } from './CameraRig';
 import { DecorMesh } from './DecorMesh';
 import { FoodMesh, RippleMesh } from './FoodAndRipples';
-import { PixelArtPass } from './PixelArtPass';
 import { ProceduralFishMesh } from './ProceduralFishMesh';
+import { SceneAsciiPass } from './SceneAsciiPass';
 import { SnailMesh } from './SnailMesh';
 import { TankEnvironmentScene } from './TankEnvironment';
 
@@ -58,15 +58,13 @@ function SceneEntities() {
   const ripples = useQuery(IsRipple);
 
   const selectedId = env?.selectedEntityId ?? -1;
-  const pixelArt = env?.pixelArt ?? true;
-  const pixelHeight = env?.pixelScale === 'chunky' ? 148 : 216;
 
   return (
     <>
       <SimulationLoop />
       <CameraRig />
       <TankEnvironmentScene />
-      <PixelArtPass enabled={pixelArt} pixelHeight={pixelHeight} />
+      <SceneAsciiPass />
 
       {fish.map((entity) => (
         <ProceduralFishMesh key={entity} entity={entity} selected={entity.id() === selectedId} />
@@ -97,7 +95,8 @@ export function AquariumScene() {
       <Canvas
         shadows
         dpr={[1, 2]}
-        camera={{ position: [0, 0.35, 11.4], fov: 42, near: 0.1, far: 60 }}
+        orthographic
+        camera={{ position: [0, -0.05, 18], zoom: 55, near: 0.1, far: 90 }}
       >
         <SceneEntities />
       </Canvas>
